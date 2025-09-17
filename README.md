@@ -29,24 +29,3 @@ Generate report:
 
 Setelah menjalankan test, report dapat ditemukan di:
 build/reports/cucumber-report.html
-
-
-Sample Test Case (login.feature):
-
-Feature: Login Functionality
-
-  @ValidLogin
-  Scenario: User login with valid credentials
-    Given User is on login page
-    When User input username with "standard_user"
-    And User input password with "secret_sauce"
-    And User click login button
-    Then User will redirected to home page
-
-  @InvalidLogin
-  Scenario: User login with invalid credentials
-    Given User is on login page
-    When User input username with "wrong_user"
-    And User input password with "wrong_pass"
-    And User click login button
-    Then User should see error message
