@@ -7,26 +7,6 @@ Repository ini berisi framework automation testing untuk aplikasi web menggunaka
 - Gradle sebagai build tool
 - Page Object Model (POM) sebagai design pattern
 
-Framework ini dibuat untuk mendemonstrasikan praktik terbaik dalam pengujian otomatis web, dengan pemisahan yang jelas antara test case, step definition, dan page object.
-
-src
- └── test
-     ├── java
-     │   ├── helper
-     │   │   └── Utility.java          # Kelas helper (driver utils, waits)
-     │   ├── pages
-     │   │   ├── HomePage.java         # Page Object untuk halaman Home
-     │   │   └── LoginPage.java        # Page Object untuk halaman Login
-     │   ├── runner
-     │   │   └── CucumberTestRunner.java # Runner untuk menjalankan test
-     │   └── stepdef
-     │       ├── Hooks.java            # Before/After scenario
-     │       └── LoginStepDef.java     # Step Definition untuk login.feature
-     └── resources
-         └── features
-             └── login.feature         # Gherkin feature file
-
-
 Tech Stack:
 
 - Java 11+
