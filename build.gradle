@@ -36,3 +36,19 @@ configurations {
         extendsFrom testImplementation
     }
 }
+
+tasks.register('cucumber') {
+    dependsOn testClasses
+    doLast {
+        javaexec {
+            mainClass = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                '--plugin', 'pretty',
+                '--plugin', 'html:build/reports/cucumber-report.html',
+                '--glue', 'stepdef', 
+                'src/test/resources/features'
+            ]
+        }
+    }
+}
