@@ -34,3 +34,12 @@ jobs:
     # execute gradle command for running cucumber test
     - name: Execute Test
       run: ./gradlew cucumber
+
+    # Archive Test Result
+    - name: Archive Test Result
+      uses: actions/upload-artifact@3.1.0
+      if: always()
+      with:
+        name: Cucumber Report
+        path: Reports
+      
