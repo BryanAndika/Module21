@@ -23,13 +23,14 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    # Install Chrome
+        # Install Chrome
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
       with:
-    chrome-version: stable
+        chrome-version: latest
 
-    # setup gradlew
+
+      # setup gradlew
     - name: setup gradlew
       run: chmod +x gradlew
 
