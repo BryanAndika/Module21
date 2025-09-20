@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Download repo
+      # Download repository
       - uses: actions/checkout@v4
 
-      # Setup Java
+      # Setup Java 17
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -28,19 +28,15 @@ jobs:
         with:
           chrome-version: latest
 
-      # Install ChromeDriver (versi otomatis sesuai Chrome)
-      - name: Setup ChromeDriver
-        uses: nanasess/setup-chromedriver@v2
-
-      # Setup gradlew
-      - name: Setup gradlew
+      # Setup gradlew permission
+      - name: Setup Gradlew
         run: chmod +x gradlew
 
-      # Execute gradle command for running cucumber test
+      # Run Gradle test with xvfb (virtual display for headless browser)
       - name: Execute Test
-        run: ./gradlew clean test
+        run: xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" ./gradlew clean test
 
-      # Archive Test Result
+      # Archive Cucumber report
       - name: Archive Test Result
         uses: actions/upload-artifact@v4
         if: always()
