@@ -27,13 +27,7 @@ jobs:
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
       with:
-        chrome-version: latest
-
-    # Install ChromeDriver
-    - name: Setup ChromeDriver
-      uses: nanasess/setup-chromedriver@v2
-      with:
-        chromedriver-version: latest
+    chrome-version: stable
 
     # setup gradlew
     - name: setup gradlew
