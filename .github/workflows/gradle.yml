@@ -28,6 +28,7 @@ jobs:
       uses: browser-actions/setup-chrome@v1
       with:
         chrome-version: latest
+        chrome-option: --headless
 
 
       # setup gradlew
