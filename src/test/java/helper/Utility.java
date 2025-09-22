@@ -14,14 +14,12 @@ public class Utility {
         // kalau pakai WebDriverManager tetap jalan
         WebDriverManager.chromedriver().setup();
 
-        // ini biar jalan di GitHub Actions (Linux runner)
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
 
+        WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver(options);
         webDriver.manage().window().maximize();
         webDriver.get("https://www.saucedemo.com/v1/index.html");
