@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty", "html:reports/cucumber-report.html"}, //berisi plugin yang akan dipakai
+        plugin = {"pretty", "html:build/cucumber-html-reports"}, //berisi plugin yang akan dipakai
             glue = {"stepdef"}, //lokasi file stepdef
             features = {"src/test/resources/features"} //lokasi file .feature
 
