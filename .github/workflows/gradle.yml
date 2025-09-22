@@ -29,8 +29,12 @@ jobs:
           chrome-version: latest
 
       # Install ChromeDriver (sinkron dengan Chrome)
-      - name: Setup ChromeDriver
-        uses: browser-actions/setup-chromedriver@v1
+      - name: Setup Chrome + ChromeDriver
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: latest
+          install-chromedriver: true
+
 
       # setup gradlew
       - name: setup gradlew
