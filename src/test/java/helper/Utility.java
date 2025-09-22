@@ -11,9 +11,6 @@ public class Utility {
 
     // membuka google chrome
     public static void startWebDriver() {
-        // kalau pakai WebDriverManager tetap jalan
-        WebDriverManager.chromedriver().setup();
-
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
